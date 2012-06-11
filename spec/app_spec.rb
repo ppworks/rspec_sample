@@ -13,6 +13,9 @@ describe "App" do
       it "正常なレスポンスが返ること" do
         last_response.should be_ok
       end
+      it "Helloと出力されること" do
+        last_response.body.should == "Hello"
+      end
     end
   end
 end
