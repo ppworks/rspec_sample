@@ -10,11 +10,12 @@ describe "App" do
   describe "レスポンスの精査" do
     describe "/へのアクセス" do
       before { get '/' }
+      subject { last_response }
       it "正常なレスポンスが返ること" do
-        last_response.should be_ok
+        should be_ok
       end
       it "Helloと出力されること" do
-        last_response.body.should == "Hello"
+        subject.body.should == "Hello"
       end
     end
   end
