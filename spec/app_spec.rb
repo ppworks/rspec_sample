@@ -12,10 +12,10 @@ describe "App" do
       before { get '/' }
       subject { last_response }
       it "正常なレスポンスが返ること" do
-        should be_ok
+        is_expected.to be_ok
       end
       it "Helloと出力されること" do
-        subject.body.should == "Hello"
+        expect(subject.body).to eq "Hello"
       end
     end
   end

@@ -303,3 +303,26 @@ Finished in 0.04653 seconds
 同じ結果が得られましたね。以上で、sinatraとrspecを使ったテスト駆動開発の体験が出来たと思います。どうでしたでしょうか？
 
 
+# specのリファクタリング2
+
+10年の月日が流れ、RSpecの構文が変わっていたので以下のように記述を更新してみました。
+
+```diff
+diff --git a/spec/app_spec.rb b/spec/app_spec.rb
+index 1347ef9..5b3906c 100644
+--- a/spec/app_spec.rb
++++ b/spec/app_spec.rb
+@@ -12,10 +12,10 @@ describe "App" do
+       before { get '/' }
+       subject { last_response }
+       it "正常なレスポンスが返ること" do
+-        should be_ok
++        is_expected.to be_ok
+       end
+       it "Helloと出力されること" do
+-        subject.body.should == "Hello"
++        expect(subject.body).to eq "Hello"
+       end
+     end
+   end
+```
