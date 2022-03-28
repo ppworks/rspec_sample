@@ -231,7 +231,7 @@ index 920ebe6..0520e2e 100644
 +++ b/app.rb
 @@ -1,4 +1,5 @@
  require 'sinatra'
- 
+
  get '/' do
 +  'Hello'
  end
@@ -261,7 +261,7 @@ Finished in 0.04242 seconds
 
 今回は振る舞いは同じまま、コードの修正を行なってみました。```app.rb```のコードが単純なため```spec/app_spec```をリファクタリングしています。```git diff tdd_004..tdd_005```の実行結果です。
 
-```
+```diff
 diff --git a/spec/app_spec.rb b/spec/app_spec.rb
 index 076f412..1347ef9 100644
 --- a/spec/app_spec.rb
